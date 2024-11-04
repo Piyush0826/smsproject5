@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Contact</title>
+    <style>
+        /* Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        /* Global styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+            margin: 0;
+            color: #333;
+        }
+
+        /* Container styles */
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Header styles */
+        .container h2 {
+            color: #f57c00;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* Label styles */
+        label {
+            font-weight: 500;
+            font-size: 14px;
+            color: #555;
+            display: block;
+            text-align: left;
+            margin-bottom: 8px;
+        }
+
+        /* Input and textarea styles */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fdfdfd;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #f57c00;
+        }
+
+        /* Textarea styles */
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        /* Submit button styles */
+        input[type="submit"] {
+            background-color: #f57c00;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 15px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e57200;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Add New Contact</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mobile_no">Mobile No:</label>
+            <input type="text" id="mobile_no" name="mobile_no" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <input type="submit" value="Add Contact">
+        </form>
+    </div>
+</body>
+</html>
